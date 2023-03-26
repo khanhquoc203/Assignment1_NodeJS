@@ -88,7 +88,7 @@ export const update = async function (req, res) {
 
 export const remove = async function (req, res) {
     try {
-        await Product.deleteOne({ _id: req.params.id });
+        await Product.findByIdAndDelete({ _id: req.params.id });
         return res.json({
             message: 'Xoa thanh cong'
         })
