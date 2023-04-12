@@ -6,9 +6,10 @@ const userSchema = new mongoose.Schema({
     password: String,
     role: {
         type: String,
-        enum: ["admin", "mebmer", "mode"],
         default: "member",
     },
-});
+},
+    { timestamps: true, versionKey: false }
+);
 
 export default mongoose.model("User", userSchema);
